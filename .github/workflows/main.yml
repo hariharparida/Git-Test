@@ -53,14 +53,14 @@ jobs:
               -Dsonar.projectKey=WebApp
               -Dsonar.sources=.
         env:
-          SONAR_TOKEN: $SONAR_TOKEN
-          SONAR_HOST_URL: $SONAR_HOST_URL
+          SONAR_TOKEN: $SONAR_TOKEN_git
+          SONAR_HOST_URL: $SONAR_HOST_URL_git
 
       - name: SonarQube Quality Gate Check
         uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
         env:
-          SONAR_TOKEN: $SONAR_TOKEN
-          SONAR_HOST_URL: $SONAR_HOST_URL
+          SONAR_TOKEN: $SONAR_TOKEN_git
+          SONAR_HOST_URL: $SONAR_HOST_URL_git
 
             
 
