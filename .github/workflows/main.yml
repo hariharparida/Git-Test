@@ -8,9 +8,7 @@ on:
 
   workflow_dispatch:
 
-env:
-  SONAR_TOKEN_git: ${{secrets.SONAR_TOKEN}}
-  SONAR_HOST_URL_git: ${{secrets.SONAR_HOST_URL}}
+
 
 
 
@@ -53,14 +51,14 @@ jobs:
               -Dsonar.projectKey=WebApp
               -Dsonar.sources=.
         env:
-          SONAR_TOKEN: $SONAR_TOKEN_git
-          SONAR_HOST_URL: $SONAR_HOST_URL_git
+          SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+          SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
 
       - name: SonarQube Quality Gate Check
         uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
         env:
-          SONAR_TOKEN: $SONAR_TOKEN_git
-          SONAR_HOST_URL: $SONAR_HOST_URL_git
+          SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+          SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
 
             
 
