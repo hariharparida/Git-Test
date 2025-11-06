@@ -32,6 +32,11 @@ jobs:
         with: 
           fetch-depth: 0
 
+      - name: Lint Check
+        run: |
+          npm run lint:fix
+          npm run lint
+
 
 
 
